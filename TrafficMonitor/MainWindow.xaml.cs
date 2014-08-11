@@ -21,39 +21,19 @@ namespace TrafficMonitor
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        IPGlobalProperties computerProperties;
-        NetworkInterface[] nics;
         
         public MainWindow()
         {
+            DataContext = new AppContext();
             InitializeComponent();
-            populateCb();
+            
         }
 
-        private void populateCb()
+        protected override void OnInitialized(EventArgs e)
         {
-            computerProperties = IPGlobalProperties.GetIPGlobalProperties();
-            nics = NetworkInterface.GetAllNetworkInterfaces();
-            if (nics == null || nics.Length <1)
-            {
-                //Message for no interface
-            }
-            else
-            {
-                foreach (NetworkInterface ninterface in nics)
-                {
-                    CbIPInterfaces.Items.Add(ninterface.Name);
-                }
-            }
+            base.OnInitialized(e);
+            ((AppContext)DataContext).Start();
         }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var index = CbIPInterfaces.SelectedIndex;
-            var BytesReceived = nics[index].GetIPv4Statistics().BytesReceived;
-            var BytesSent = nics[index].GetIPv4Statistics().BytesSent;    
-            TxtBlock1.Text = "Bytes received: "+ BytesReceived.ToString()+"\r\n"+"Bytes sent: "+ BytesSent.ToString()+"\r\n";
-        }
+      
     }
 }
