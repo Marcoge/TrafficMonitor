@@ -1,0 +1,10 @@
+﻿<Window x:Class="TrafficMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ComboBox x:Name="CbIPInterfaces" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBlock x:Name="TxtBlock1" HorizontalAlignment="Left" Margin="21,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="72" Width="413"/>
+
+    </Grid>
+</Window>

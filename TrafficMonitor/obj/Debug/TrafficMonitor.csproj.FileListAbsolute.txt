@@ -1,0 +1,13 @@
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\bin\Debug\TrafficMonitor.exe.config
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\bin\Debug\TrafficMonitor.exe
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\bin\Debug\TrafficMonitor.pdb
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor.csprojResolveAssemblyReference.cache
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\MainWindow.baml
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\MainWindow.g.cs
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\App.g.cs
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor_MarkupCompile.cache
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor.g.resources
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor.Properties.Resources.resources
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor.csproj.GenerateResource.Cache
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor.exe
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor.pdb
