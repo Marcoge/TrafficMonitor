@@ -12,7 +12,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBlock DataContext="{Binding SelectedAdapter}" Text="{Binding BytesReceived}" HorizontalAlignment="Left" Margin="22,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289"/>
+        <TextBlock DataContext="{Binding SelectedAdapter}" Text="{Binding BytesReceived, Converter={converters:ByteToGbFormatter}}" HorizontalAlignment="Left" Margin="22,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289"/>
         <TextBlock DataContext="{Binding SelectedAdapter}" Text="{Binding BytesSent}" HorizontalAlignment="Left" Margin="22,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"/>
 
     </Grid>
