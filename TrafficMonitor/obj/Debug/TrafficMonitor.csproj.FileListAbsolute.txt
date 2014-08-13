@@ -13,3 +13,4 @@ D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor.exe
 D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor.pdb
 D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\TrafficMonitor_MarkupCompile.lref
+D:\Entwicklung\c#\TrafficMonitor\TrafficMonitor\obj\Debug\App.baml

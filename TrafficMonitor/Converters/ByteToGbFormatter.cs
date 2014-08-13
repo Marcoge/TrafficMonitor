@@ -5,28 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace TrafficMonitor
+namespace TrafficMonitor.Converters
 {
     [ValueConversion(typeof(String),typeof(String))]
 
-    public sealed class ByteToGbFormatter:IValueConverter
+    public class ByteToGbFormatter: IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            var s = (String)value;
-            long temp = long.Parse(s);
+
+            String s = "";
+            float teilen;
+            Int64 temp = (Int64)value;
 
             if (temp >= 1024 && temp < 1048576 )
             {
-                return s = (temp / 1024).ToString() + (" KB");
+                teilen = ((float)temp / 1024);
+                return s = teilen.ToString("0.00") + (" KB");
             }
             if (temp >= 1048576 && temp < 1073741824)
             {
-                return s = (temp / 1048576).ToString() + (" MB");
+                teilen = ((float)temp / 1048576);
+                return s = teilen.ToString("0.00") + (" MB");
             }
             if (temp >= 1073741824 )
             {
-                return s = (temp / 1073741824).ToString() + ("GB");
+                teilen = ((float)temp / 1073741824);
+                return s = teilen.ToString("0.00") + ("GB");
             }
             else
             {
