@@ -20,10 +20,15 @@ namespace TrafficMonitor
         private long _bytesReceivedDelta;
         private long _prevTickReceived;
         private long _prevTickSent;
+        private long _progressBarMaxByte;
+        private long _progressBarActValueReceived;
+        private long _progressBarActValueSent;
+
 
         public NetworkAdapterContext(NetworkInterface ni)
         {
             _networkInterface = ni;
+            _progressBarMaxByte = ni.Speed/8;
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromMilliseconds(250);
             _timer.Tick += OnTick;
@@ -38,9 +43,11 @@ namespace TrafficMonitor
         {
             var receivedTemp= _networkInterface.GetIPStatistics().BytesReceived;
             var sentTemp = _networkInterface.GetIPStatistics().BytesSent;
-            
+
             BytesReceivedDelta = receivedTemp - _prevTickReceived;
             BytesSentDelta = sentTemp - _prevTickSent;
+            ProgressBarActValueReceived = BytesReceivedDelta;
+            ProgressBarActValueSent = BytesSentDelta;
            
             _prevTickSent = sentTemp;
             _prevTickReceived = receivedTemp;
@@ -122,6 +129,41 @@ namespace TrafficMonitor
             }
         }
 
+        public long ProgressBarMaxByte { get { return _progressBarMaxByte; } set{} }
+
+        public long ProgressBarActValueReceived
+        {
+            get
+            {
+                return _progressBarActValueReceived;
+            }
+
+            set
+            {
+                if (value != _progressBarActValueReceived)
+                {
+                    _progressBarActValueReceived = value;
+                    OnPropertyChanged("ProgressBarActValueReceived");
+                }
+            }
+        }
+
+        public long ProgressBarActValueSent
+        {
+            get
+            {
+                return _progressBarActValueSent;
+            }
+
+            set
+            {
+                if (value != _progressBarActValueSent)
+                {
+                    _progressBarActValueSent = value;
+                    OnPropertyChanged("ProgressBarActValueSent");
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

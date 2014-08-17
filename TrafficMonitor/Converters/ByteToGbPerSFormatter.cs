@@ -18,6 +18,12 @@ namespace TrafficMonitor.Converters
             float teilen;
             Int64 temp = (Int64)value;
 
+            if (temp >= 0 && temp < 1024)
+            {
+                teilen = ((float)temp);
+                return s = teilen.ToString("0.00") + (" B/s");
+            }
+            
             if (temp >= 1024 && temp < 1048576 )
             {
                 teilen = ((float)temp / 1024);
