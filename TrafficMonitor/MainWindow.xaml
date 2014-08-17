@@ -4,7 +4,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:converters="clr-namespace:TrafficMonitor.Converters"
-        Title="Traffic Monitor" Height="200" Width="525" FontWeight="Bold" WindowStyle="ThreeDBorderWindow" Background="#FFB8B8B8">
+        Topmost="True"
+        Title="Traffic Monitor" Height="177" Width="286" FontWeight="Bold" WindowStyle="ThreeDBorderWindow" Background="#FFB8B8B8">
     <Grid>
         <ComboBox ItemsSource="{Binding Adapters}" SelectedValue="{Binding SelectedAdapter, Mode=TwoWay}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120">
             <ComboBox.ItemTemplate>
