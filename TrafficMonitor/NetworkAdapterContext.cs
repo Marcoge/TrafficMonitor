@@ -13,16 +13,37 @@ namespace TrafficMonitor
     {
         private NetworkInterface _networkInterface;
         private DispatcherTimer _timer;
+        private DispatcherTimer _sTimer;
         private long _bytesSent;
         private long _bytesReceived;
+        private long _bytesSentDelta;
+        private long _bytesReceivedDelta;
+        private long _prevTickReceived;
+        private long _prevTickSent;
 
         public NetworkAdapterContext(NetworkInterface ni)
         {
             _networkInterface = ni;
             _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromMilliseconds(42);
+            _timer.Interval = TimeSpan.FromMilliseconds(250);
             _timer.Tick += OnTick;
             _timer.Start();
+            _sTimer = new DispatcherTimer();
+            _sTimer.Interval = TimeSpan.FromMilliseconds(1000);
+            _sTimer.Tick += SOnTick;
+            _sTimer.Start();
+        }
+
+        private void SOnTick(object sender, EventArgs e)
+        {
+            var receivedTemp= _networkInterface.GetIPStatistics().BytesReceived;
+            var sentTemp = _networkInterface.GetIPStatistics().BytesSent;
+            
+            BytesReceivedDelta = receivedTemp - _prevTickReceived;
+            BytesSentDelta = sentTemp - _prevTickSent;
+           
+            _prevTickSent = sentTemp;
+            _prevTickReceived = receivedTemp;
         }
 
         private void OnTick(object sender, EventArgs e)
@@ -66,6 +87,41 @@ namespace TrafficMonitor
                 }
             }
         }
+
+        public long BytesSentDelta
+        {
+            get
+            {
+                return _bytesSentDelta;
+            }
+
+            set
+            {
+                if (value != _bytesSentDelta)
+                {
+                    _bytesSentDelta = value;
+                    OnPropertyChanged("BytesSentDelta");
+                }
+            }
+        }
+
+        public long BytesReceivedDelta
+        {
+            get
+            {
+                return _bytesReceivedDelta;
+            }
+
+            set
+            {
+               if (value != _bytesReceivedDelta)
+                {
+                    _bytesReceivedDelta = value;
+                    OnPropertyChanged("BytesReceivedDelta");
+                }
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

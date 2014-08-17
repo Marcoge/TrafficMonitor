@@ -17,6 +17,8 @@
         <TextBlock DataContext="{Binding SelectedAdapter}" Text="{Binding BytesSent, Converter={StaticResource ByteToGbFormatter}}" HorizontalAlignment="Left" Margin="10,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF21EE00"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="Bytes Received" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Bytes Sent" VerticalAlignment="Top"/>
+        <TextBlock DataContext="{Binding SelectedAdapter}" Text="{Binding BytesReceivedDelta, Converter={StaticResource ByteToGbPerSFormatter}}" HorizontalAlignment="Left" Margin="153,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
+        <TextBlock DataContext="{Binding SelectedAdapter}" Text="{Binding BytesSentDelta, Converter={StaticResource ByteToGbPerSFormatter}}" HorizontalAlignment="Left" Margin="153,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.625,1.438" Width="95"/>
 
     </Grid>
 </Window>

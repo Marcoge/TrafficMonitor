@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="AppContext.cs" />
     <Compile Include="Converters\ByteToGbFormatter.cs" />
+    <Compile Include="Converters\ByteToGbPerSFormatter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

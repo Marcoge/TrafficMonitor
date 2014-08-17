@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <converters:ByteToGbFormatter x:Key="ByteToGbFormatter" />
+            <converters:ByteToGbPerSFormatter x:Key="ByteToGbPerSFormatter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
